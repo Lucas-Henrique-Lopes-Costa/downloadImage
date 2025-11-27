@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from icrawler.builtin import GoogleImageCrawler
+from icrawler.builtin import BingImageCrawler
 import os
 
 def download_images(keyword, max_num=5):
@@ -9,8 +9,8 @@ def download_images(keyword, max_num=5):
     save_dir = os.path.join("images", keyword.replace(" ", "_"))
     os.makedirs(save_dir, exist_ok=True)
     
-    # Configura e inicia o crawler do Google Images
-    crawler = GoogleImageCrawler(storage={'root_dir': save_dir})
+    # Configura e inicia o crawler do Bing Images
+    crawler = BingImageCrawler(storage={'root_dir': save_dir})
     crawler.crawl(keyword=keyword, max_num=max_num)
 
 def main():
